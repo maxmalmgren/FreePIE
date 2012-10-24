@@ -7,6 +7,7 @@ using FreePIE.Core.Common.Events;
 using FreePIE.Core.Persistence;
 using FreePIE.Core.Plugins;
 using FreePIE.Core.ScriptEngine;
+using FreePIE.Core.ScriptEngine.CSharp;
 using FreePIE.Core.ScriptEngine.CodeCompletion;
 using FreePIE.Core.ScriptEngine.Globals;
 using Ninject;
@@ -22,8 +23,8 @@ namespace FreePIE.Core.Services
             var kernel = new StandardKernel();
             AddCustomBindings(kernel);
 
-            kernel.Bind<IScriptEngine>().To<LuaEngine>();
-            kernel.Bind<IScriptParser>().To<LuaScriptParser>();
+            kernel.Bind<IScriptEngine>().To<CSharpScriptEngine>();
+            kernel.Bind<IScriptParser>().To<CSharpScriptParser>();
             kernel.Bind<ICodeCompletionProvider>().To<CodeCompletionProvider>();
             kernel.Bind<IRuntimeInfoProvider>().To<RuntimeInfoProvider>();
 

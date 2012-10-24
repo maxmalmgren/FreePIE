@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FreePIE.Core</RootNamespace>
     <AssemblyName>FreePIE.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="lua51">
@@ -40,6 +43,14 @@
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\Lib\Ninject\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Roslyn\Roslyn.Compilers.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers.CSharp, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Roslyn\Roslyn.Compilers.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -91,6 +102,8 @@
     <Compile Include="ScriptEngine\CodeCompletion\IRuntimeInfoProvider.cs" />
     <Compile Include="Model\Node.cs" />
     <Compile Include="ScriptEngine\CodeCompletion\RuntimeInfoProvider.cs" />
+    <Compile Include="ScriptEngine\CSharp\CSharpScriptEngine.cs" />
+    <Compile Include="ScriptEngine\CSharp\CSharpScriptParser.cs" />
     <Compile Include="ScriptEngine\Globals\GlobalsInfo.cs" />
     <Compile Include="ScriptEngine\Globals\CurveGlobalProvider.cs" />
     <Compile Include="ScriptEngine\Globals\IGlobalProvider.cs" />
